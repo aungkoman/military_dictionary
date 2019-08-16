@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>Dictionary</title>
+    <!-- Path to Framework7 Library CSS-->
+    <link rel="stylesheet" href="css/framework7.ios.min.css">
+  <link rel="stylesheet" href="css/framework7.ios.colors.min.css">
+    <!-- Path to your custom app styles-->
+    <link rel="stylesheet" href="css/my-app.css">
+    <script type="text/javascript" src="js/data.js"></script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+<style type="text/css">
+@font-face {
+    font-family: Zawgyi;
+    src: url("file:///android_asset/fonts/zawgyi.ttf")
+}
+body {
+    font-family: Zawgyi;
+    font-size: medium;
+    text-align: justify;
+}
+</style>
+
+  </head>
+  <body>
+    <!-- Status bar overlay for fullscreen mode-->
+    <div class="statusbar-overlay"></div>
+    <!-- Panels overlay-->
+    <div class="panel-overlay"></div>
+    <!-- Left panel with reveal effect-->
+    <div class="panel panel-left panel-reveal">
+      <div class="content-block">
+        <p>English - Myanmar Military Dictionary</p>
+		<p>Brought to you by <span class="color-blue">TEAM CS</span></P>
+      </div>
+    </div>
+    <!-- Right panel with cover effect-->
+    <div class="panel panel-right panel-cover">
+      <div class="content-block">
+        <p>Right panel content goes here</p>
+      </div>
+    </div>
+    <!-- Views-->
+    <div class="views">
+      <!-- Your main view, should have "view-main" class-->
+      <div class="view view-main">
+        <!-- Top Navbar-->
+        <div class="navbar">
+          <!-- Navbar inner for Index page-->
+          <div data-page="index" class="navbar-inner">
+            <!-- We have home navbar without left link-->
+            <div class="center sliding">Military Dictionary</div>
+            <div class="right">
+              <!-- Right link contains only icon - additional "icon-only" class-->
+								<a href="#" class="link icon-only open-panel"> <i class="icon icon-bars"></i></a>
+            </div>
+          </div>
+
+    <!-- Navbar inner for defination page-->
+          <div data-page="defination" class="navbar-inner cached">
+						<div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
+           
+            <!-- We have home navbar without left link-->
+            <div class="center sliding">Defination</div>
+            <div class="right">
+              <!-- Right link contains only icon - additional "icon-only" class-->
+								<a href="#" class="link icon-only open-panel"> <i class="icon icon-bars"></i></a>
+            </div>
+          </div>
+        </div>
+        <!-- Pages, because we need fixed-through navbar and toolbar, it has additional appropriate classes-->
+        <div class="pages navbar-through toolbar-through">
+          <!-- Index Page-->
+          <div data-page="index" class="page">
+
+    <!-- Search Bar -->
+    <form class="searchbar">
+        <div class="searchbar-input">
+            <input type="search" placeholder="Search">
+            <a href="#" class="searchbar-clear"></a>
+        </div>
+        <a href="#" class="searchbar-cancel">Cancel</a>
+    </form>
+    
+    <!-- Search Bar overlay-->
+    <div class="searchbar-overlay"></div>
+    
+
+            <!-- Scrollable page content-->
+            <div class="page-content">
+   
+        <div class="content-block searchbar-not-found">
+                Nothing found
+        </div>
+ 
+  
+<div class="list-block cards-list virtual-list list-block-search searchbar-found">
+  <!-- keep it empty -->
+</div>
+
+									
+            </div>
+          </div>
+
+   <!-- Defination Page-->
+          <div data-page="defination" class="page cached">
+            <div class="page-content">
+              <div class="content-block">
+                <div class="list-block cards-list" id="defcard">
+  
+				</div>
+										<div class="content-block">
+                <div class="row">
+                 <div class="col-100">
+                    <input type="button" id="btnSayIt" value="Say It" class="button button-big button-fill color-green">
+                  </div>
+                </div>
+              </div>
+							 </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+<script type="text/template7" id="personTemplate">
+    <p>Hello, my name is {{name}} and i am {{age}} years old</p>
+    <p>I work as {{position}} at {{company}}</p>
+</script>
+ 
+<script type="text/template7" id="carTemplate">
+    <p>I have a great car, it is {{vendor}} {{model}}, made in {{year}} year.</p>
+    <p>It has {{power}} hp engine with {{speed}} km/h maximum speed.</p>
+</script> 
+
+<script type="text/template7" id="defTemplate">
+ <div class="card">
+     <div class="card-content">
+       <div class="card-content-inner engdef">{{engTemp}}</div>
+     </div>
+     <div class="card-footer mmdef">{{mmTemp}}</div>
+ </div>
+</script> 
+
+
+    <!-- Path to Framework7 Library JS-->
+    <script type="text/javascript" src="js/framework7.min.js"></script>
+    <!-- Path to your app js-->
+    <script type="text/javascript" src="js/my-app.js"></script>
+
+  </body>
+</html>

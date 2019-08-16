@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Military Dictionary</string>
+    <string name="exit_greeting">Press back key again to exit!</string>
+    <string name="banner1_test">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="banner1">ca-app-pub-4224641533746813/3143905064</string>
+</resources>
