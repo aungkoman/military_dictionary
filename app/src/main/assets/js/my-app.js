@@ -76,7 +76,14 @@ var mm=data[index].mmdef;
 	//myApp.alert(eng+'<br>'+mm,"Defination");
 //myApp.alert(eng+"<br><hr>"+mm,"Defination");
 addDefCard(eng,mm);
-$("#btnSayIt").click(function(){Android.speak(eng);});
+$("#btnSayIt").click(function(){
+    try{
+        Android.speak(eng);
+    } catch(error){
+        myApp.alert("Speak feature is available on only Android","Warning");
+    }
+    
+});
 //Android.speak(eng);
 }
 
